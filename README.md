@@ -5,10 +5,6 @@ are dimmed. Improves accuracy of `f`, `F`, `t`, `T` navigation within a line.
 
 ![](img/fFtT.jpeg)
 
-Highlight group `FfTtSubtle` is associated with characters that are unreachable
-within one jump. It is linked to group `Comment`. Configure this if you wish a
-different look.
-
 ## Requirements
 
 - Vim version 9.0 or higher
@@ -57,3 +53,8 @@ packadd vimcomplete
 ```
 
 </details>
+
+## Configuration
+
+Highlight group `FfTtSubtle` controls the look of characters that are unreachable
+within one jump. It is linked to group `Comment`.
