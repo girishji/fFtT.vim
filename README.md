@@ -1,13 +1,12 @@
 # fFtT.vim
 
-Characters that can be reached with a single jump are highlighted while others
-are dimmed. Improves accuracy of `f`, `F`, `t`, `T` navigation within a line.
+Characters that are reachable with a single jump are highlighted, while others are dimmed. This enhancement improves the accuracy of navigation using `f`, `F`, `t`, and `T` commands.
 
 ![](img/fFtT.jpeg)
 
 ## Requirements
 
-- Vim version 9.0 or higher
+- Vim 9.0 or higher
 
 ## Installation
 
