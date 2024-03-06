@@ -1,6 +1,8 @@
 # fFtT.vim
 
-Characters that are reachable with a single jump are highlighted, while others are dimmed. This enhancement improves the accuracy of navigation using `f`, `F`, `t`, and `T` commands.
+Characters that are reachable with a single jump are highlighted, while others are dimmed. This enhancement improves the accuracy of navigation using `f`, `F`, `t`, and `T` commands. Additionally, you can provide a numerical prefix (e.g., `3f`), which will only highlight characters that occur the third time to the right of the cursor, while others are dimmed.
+
+This plugin does not remap keys or alter the behavior of commands. It solely focuses on highlighting relevant characters without making any changes to the default key mappings. The code is concise, with less than 100 lines of commented code.
 
 ![](img/fFtT.jpeg)
 

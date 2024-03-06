@@ -20,35 +20,45 @@ augroup fFtTplusHighlight | autocmd!
     autocmd CursorMoved,ModeChanged,TextChanged,WinEnter,WinLeave,CmdWinLeave * HighligtClear()
 augroup END
 
+# Gather locations of characters to be dimmed.
 def HighligtChars(s: string): string
     var [_, lnum, col, _] = getpos('.')
-    var freq = {}
     var line = getline('.')
+    # Extended ASCII characters can pose a challenge if we simply iterate over
+    # bytes. It is preferable to let Vim split the line by characters for more
+    # accurate handling.
+    var found = {}
     for ch in line->split('\zs')
-        freq[ch] = freq->get(ch, 0) + 1
+        if !found->has_key(ch)
+            found[ch] = 1
+        endif
     endfor
-    freq->filter((_, v) => v > 1)
 
     var [start, reverse] = (s =~ '\C[ft]') ? [col, false] : [col - 2, true]
-    var locations = {}
-    for ch in freq->keys()
+    var locations = []
+    var freq = {}
+    var maxloc = max([100, &lines * &columns])
+    for ch in found->keys()
         var loc = reverse ? line->strridx(ch, start) : line->stridx(ch, start)
         while loc != -1
-            locations[ch] = locations->get(ch, [])->add(loc + 1)
+            freq[ch] = freq->get(ch, 0) + 1
+            if freq[ch] != v:count1
+                if freq[ch] > maxloc
+                    # If we encounter a super long line, there's no need to
+                    # search for locations most likely to be invisible.
+                    break
+                endif
+                locations->add([lnum, loc + 1])
+            endif
             loc = reverse ? line->strridx(ch, loc - 1) : line->stridx(ch, loc + 1)
         endwhile
     endfor
 
-    var loclist = []
-    for val in locations->values()
-        loclist += val->slice(1)
-    endfor
-    loclist->map((_, v) => [lnum, v])
-    if !loclist->empty()
+    if !locations->empty()
         if id > 0
             matchdelete(id)
         endif
-        id = matchaddpos('FfTtSubtle', loclist, 1001)
+        id = matchaddpos('FfTtSubtle', locations, 1001)
         :redraw
     endif
     return ''

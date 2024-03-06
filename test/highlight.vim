@@ -29,6 +29,11 @@ if assert_equal([], getmatches()) == 1
     verbose echoerr v:errors
 endif
 
+cursor(1, 1)
+nhi = [16, 28, 38, 42, 46, 47, 51, 55]
+Verify('3f', nhi)
+normal "\<esc>"
+
 cursor(1, 19)
 nhi = range(1, 19)
 Verify('f', nhi)
@@ -40,8 +45,22 @@ Verify('F', nhi)
 normal "\<esc>"
 
 cursor(1, 24)
+nhi = range(24, 64)
+Verify('4F', nhi)
+normal "\<esc>"
+
+cursor(1, 24)
+nhi = range(24, 64)->extend([2])
+Verify('3F', nhi)
+normal "\<esc>"
+
+cursor(1, 24)
 nhi = range(1, 30)->extend([32, 34, 35, 36, 37, 38, 43, 45, 47, 50, 51, 52, 58, 64])
 Verify('t', nhi)
+
+cursor(1, 24)
+nhi = range(1, 24)->extend([42, 55, 56, 60])
+Verify('3t', nhi)
 
 cursor(1, 24)
 nhi = range(15, 64)->extend([1, 4, 7, 8, 10, 11, 13])
@@ -53,5 +72,9 @@ exe "normal \<esc>"
 if assert_equal([], getmatches()) == 1
     verbose echoerr v:errors
 endif
+
+cursor(1, 24)
+nhi = range(24, 64)->extend([2])
+Verify('3T', nhi)
 
 qa!
