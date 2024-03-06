@@ -76,4 +76,3 @@ onoremap T <Plug>(fFtTplus-T)T
 nnoremap <esc> <Plug>(fFtTplus-esc)<esc>
 xnoremap <esc> <Plug>(fFtTplus-esc)<esc>
 onoremap <esc> <Plug>(fFtTplus-esc)<esc>
-

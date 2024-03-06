@@ -4,13 +4,13 @@
 # vim clears stdout/stderr on exit. use `verbose` to direct messages to stderr.
 # syntax errors can make the test hang.
 
-test_file='highlight.vim'
-
-vim -nEs -u DEFAULTS -S <(cat <<EOF
-    vim9script
-    set shortmess=I
-    so ../plugin/fFtTplus.vim
-    so ./${test_file}
-    qa!
-EOF
-)
+for test_file in highlight.vim yank.vim visual.vim; do
+    vim -nEs -u DEFAULTS -S <(cat <<EOF
+        vim9script
+        set shortmess=I
+        so ../plugin/fFtTplus.vim
+        so ./${test_file}
+        qa!
+    EOF
+    )
+done
