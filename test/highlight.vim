@@ -8,7 +8,7 @@ def Verify(cmd: string, not_hi: list<number>)
         verbose echoerr v:errors
     endif
     for v in getmatches()[0]->values()
-        if v->len() == 3
+        if v->type() == v:t_list && v->len() == 3
             if  v[0] != 1 || not_hi->index(v[1]) != -1
                 verbose echoerr 'error at' v
             endif
