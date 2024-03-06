@@ -45,15 +45,14 @@ $ cd $HOME/.vim/pack/downloads/opt
 $ git clone https://github.com/girishji/fFtT.vim.git
 ```
 
-Add the following line to your $HOME/.vimrc file.
+Add the following to your $HOME/.vimrc file.
 
 ```vim
-packadd vimcomplete
+packadd fFtT.vim
 ```
 
 </details>
 
 ## Configuration
 
-Highlight group `FfTtSubtle` controls the look of characters that are unreachable
-within one jump. It is linked to group `Comment`.
+The appearance of characters that are unreachable within one jump is determined by the highlight group `FfTtSubtle`, which is linked to the `Comment` group by default.
