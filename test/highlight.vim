@@ -4,7 +4,7 @@ so ./setup.vim
 
 def Verify(cmd: string, not_hi: list<number>)
     exe $'normal {cmd}'
-    if assert_equal([], getmatches()) == 0
+    if assert_notequal([], getmatches()) == 1
         verbose echoerr v:errors
     endif
     for v in getmatches()[0]->values()
@@ -19,10 +19,18 @@ enddef
 cursor(1, 1)
 var nhi = range(1, 10)->extend([13, 15, 21, 23, 27, 29, 31, 51, 57])
 Verify('f', nhi)
+if assert_notequal([], getmatches()) == 1
+    verbose echoerr v:errors
+endif
+exe "normal \<esc>"
+if assert_equal([], getmatches()) == 1
+    verbose echoerr v:errors
+endif
 
 cursor(1, 19)
 nhi = range(1, 19)
 Verify('f', nhi)
+normal "\<esc>"
 
 cursor(1, 20)
 nhi = range(15, 57)->extend([1, 4, 7, 8, 10, 11, 13])
@@ -35,6 +43,13 @@ Verify('t', nhi)
 cursor(1, 20)
 nhi = range(15, 57)->extend([1, 4, 7, 8, 10, 11, 13])
 Verify('T', nhi)
+if assert_notequal([], getmatches()) == 1
+    verbose echoerr v:errors
+endif
+exe "normal \<esc>"
+if assert_equal([], getmatches()) == 1
+    verbose echoerr v:errors
+endif
 
 # Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
 qa!

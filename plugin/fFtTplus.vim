@@ -13,7 +13,7 @@ def HighligtClear(): string
         :redraw
         id = 0
     endif
-    :nohlsearch
+    :redraw!
     return ''
 enddef
 
