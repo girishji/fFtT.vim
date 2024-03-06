@@ -16,8 +16,10 @@ def Verify(cmd: string, not_hi: list<number>)
     endfor
 enddef
 
+# Lorem ipsum doloćrż sit amęt, cąnsęctetuer adipiscing elit.
+
 cursor(1, 1)
-var nhi = range(1, 10)->extend([13, 15, 21, 23, 27, 29, 31, 51, 57])
+var nhi = range(1, 10)->extend([13, 15, 17, 20, 25, 27, 29, 32, 34, 37, 58, 64])
 Verify('f', nhi)
 if assert_notequal([], getmatches()) == 1
     verbose echoerr v:errors
@@ -32,16 +34,17 @@ nhi = range(1, 19)
 Verify('f', nhi)
 normal "\<esc>"
 
-cursor(1, 20)
-nhi = range(15, 57)->extend([1, 4, 7, 8, 10, 11, 13])
+cursor(1, 24)
+nhi = range(15, 64)->extend([1, 4, 7, 8, 10, 11, 13])
 Verify('F', nhi)
+normal "\<esc>"
 
-cursor(1, 20)
-nhi = range(1, 25)->extend([27, 29, 30, 31, 32, 38, 40, 43, 44, 45, 51, 54, 57])
+cursor(1, 24)
+nhi = range(1, 30)->extend([32, 34, 35, 36, 37, 38, 43, 45, 47, 50, 51, 52, 58, 64])
 Verify('t', nhi)
 
-cursor(1, 20)
-nhi = range(15, 57)->extend([1, 4, 7, 8, 10, 11, 13])
+cursor(1, 24)
+nhi = range(15, 64)->extend([1, 4, 7, 8, 10, 11, 13])
 Verify('T', nhi)
 if assert_notequal([], getmatches()) == 1
     verbose echoerr v:errors
@@ -51,5 +54,4 @@ if assert_equal([], getmatches()) == 1
     verbose echoerr v:errors
 endif
 
-# Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
 qa!

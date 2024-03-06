@@ -9,11 +9,10 @@ hi def link FfTtSubtle Comment
 
 def HighligtClear(): string
     if id > 0
-        matchdelete(id)
+        id->matchdelete()
         :redraw
         id = 0
     endif
-    :redraw!
     return ''
 enddef
 
