@@ -7,12 +7,14 @@ var id: number
 
 hi def link FfTtSubtle Comment
 
-def HighligtClear()
+def HighligtClear(): string
     if id > 0
         matchdelete(id)
         :redraw
         id = 0
     endif
+    :nohlsearch
+    return ''
 enddef
 
 augroup fFtTplusHighlight | autocmd!
@@ -47,7 +49,7 @@ def HighligtChars(s: string): string
         if id > 0
             matchdelete(id)
         endif
-        id = matchaddpos('FfTtSubtle', loclist, 11)
+        id = matchaddpos('FfTtSubtle', loclist, 1001)
         :redraw
     endif
     return ''
@@ -57,6 +59,7 @@ noremap <silent><expr> <Plug>(fFtTplus-f) HighligtChars('f')
 noremap <silent><expr> <Plug>(fFtTplus-F) HighligtChars('F')
 noremap <silent><expr> <Plug>(fFtTplus-t) HighligtChars('t')
 noremap <silent><expr> <Plug>(fFtTplus-T) HighligtChars('T')
+noremap <silent><expr> <Plug>(fFtTplus-esc) HighligtClear()
 
 nnoremap f <Plug>(fFtTplus-f)f
 xnoremap f <Plug>(fFtTplus-f)f
@@ -70,3 +73,7 @@ onoremap t <Plug>(fFtTplus-t)t
 nnoremap T <Plug>(fFtTplus-T)T
 xnoremap T <Plug>(fFtTplus-T)T
 onoremap T <Plug>(fFtTplus-T)T
+nnoremap <esc> <Plug>(fFtTplus-esc)<esc>
+xnoremap <esc> <Plug>(fFtTplus-esc)<esc>
+onoremap <esc> <Plug>(fFtTplus-esc)<esc>
+
