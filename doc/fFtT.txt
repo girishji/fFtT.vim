@@ -1,18 +1,18 @@
-*fFtT.txt*	Accurate left-right navigation in Vim
+*fFtTplus.txt*	Accurate left-right navigation in Vim
 
 Author: Girish Palya (girishji AT gmail DOT com)
 For Vim version 9.0 and above
 
 ==============================================================================
-CONTENTS                                            *fFtT-contents*
+CONTENTS                                            *fFtTplus-contents*
 
-     1. Overview ................................. |fFtT-overview|
-     2. Requirements ............................. |fFtT-requirements|
-     3. Installation ............................. |fFtT-installation|
-     4. Configuration............................. |fFtT-configuration|
+     1. Overview ................................. |fFtTplus-overview|
+     2. Requirements ............................. |fFtTplus-requirements|
+     3. Installation ............................. |fFtTplus-installation|
+     4. Configuration............................. |fFtTplus-configuration|
 
 ==============================================================================
-1. Overview					*fFtT-overview*
+1. Overview					*fFtTplus-overview*
 
 Characters that are reachable with a single jump are highlighted, while others
 are dimmed. This enhancement improves the accuracy of navigation using `f`,
@@ -26,30 +26,30 @@ default key mappings. The code consists of less than 100 lines, with
 explanatory comments.
 
 ==============================================================================
-2. Requirements					*fFtT-requirements*
+2. Requirements					*fFtTplus-requirements*
 
 - Vim >= 9.1
 
 ==============================================================================
-3. Installation					*fFtT-installation*
+3. Installation					*fFtTplus-installation*
 
 Install using vim-plug (https://github.com/junegunn/vim-plug)
 >
 	vim9script
 	plug#begin()
-	Plug 'girishji/fFtT.vim'
+	Plug 'girishji/fFtTplus.vim'
 	plug#end()
 
 Legacy script:
 >
 	call plug#begin()
-	Plug 'girishji/fFtT.vim'
+	Plug 'girishji/fFtTplus.vim'
 	call plug#end()
 
 Or use Vim's builtin package manager.
 
 ==============================================================================
-4. Configuration				*fFtT-configuration*
+4. Configuration				*fFtTplus-configuration*
 
 The appearance of characters that are unreachable within one jump is
 determined by the highlight group `FfTtSubtle`, which is linked to the
