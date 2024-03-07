@@ -1,6 +1,6 @@
 # fFtT.vim
 
-Characters that are reachable with a single jump are highlighted, while others are dimmed. This enhancement enhances the accuracy of navigation using `f`, `F`, `t`, and `T` commands. Moreover, you can prefix the command with a numerical [count] (e.g., `3f`), which will exclusively highlight the [count]'th occurrence (third in this instance) of a character to the right of the cursor, while dimming the others. Pressing `<esc>` dismisses the highlights.
+Characters that are reachable with a single jump are highlighted, while others are dimmed. This enhancement enhances the accuracy of navigation using `f`, `F`, `t`, and `T` commands. Moreover, you can prefix the command with a numerical [count] (e.g., `3f`), which will exclusively highlight the [count]'th occurrence (third in this instance) of a character to the right of the cursor, while dimming the others.
 
 This plugin does not alter Vim operators or commands. It solely focuses on highlighting relevant characters without making any changes to the default key mappings. The code consists of less than 100 lines, with explanatory comments.
 
