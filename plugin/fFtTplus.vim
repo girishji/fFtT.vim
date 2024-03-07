@@ -18,7 +18,7 @@ def HighligtClear(): string
 enddef
 
 augroup fFtTplusHighlight | autocmd!
-    autocmd CursorMoved,ModeChanged,TextChanged,WinEnter,WinLeave,CmdWinLeave * HighligtClear()
+    autocmd CursorMoved,ModeChanged,TextChanged,WinEnter,WinLeave,CmdWinLeave,SafeState * HighligtClear()
 augroup END
 
 # Gather locations of characters to be dimmed.
