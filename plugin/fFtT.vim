@@ -2,7 +2,7 @@ if !has('vim9script') ||  v:version < 900
     finish
 endif
 vim9script
-g:loaded_fFtTplus = true
+g:loaded_fFtT = true
 
 var id: number
 
@@ -17,7 +17,7 @@ def HighligtClear(): string
     return ''
 enddef
 
-augroup fFtTplusHighlight | autocmd!
+augroup fFtTHighlight | autocmd!
     autocmd CursorMoved,ModeChanged,TextChanged,WinEnter,WinLeave,CmdWinLeave,SafeState * HighligtClear()
 augroup END
 
@@ -65,24 +65,24 @@ def HighligtChars(s: string): string
     return ''
 enddef
 
-noremap <silent><expr> <Plug>(fFtTplus-f) HighligtChars('f')
-noremap <silent><expr> <Plug>(fFtTplus-F) HighligtChars('F')
-noremap <silent><expr> <Plug>(fFtTplus-t) HighligtChars('t')
-noremap <silent><expr> <Plug>(fFtTplus-T) HighligtChars('T')
-noremap <silent><expr> <Plug>(fFtTplus-esc) HighligtClear()
+noremap <silent><expr> <Plug>(fFtT-f) HighligtChars('f')
+noremap <silent><expr> <Plug>(fFtT-F) HighligtChars('F')
+noremap <silent><expr> <Plug>(fFtT-t) HighligtChars('t')
+noremap <silent><expr> <Plug>(fFtT-T) HighligtChars('T')
+noremap <silent><expr> <Plug>(fFtT-esc) HighligtClear()
 
-nnoremap f <Plug>(fFtTplus-f)f
-xnoremap f <Plug>(fFtTplus-f)f
-onoremap f <Plug>(fFtTplus-f)f
-nnoremap F <Plug>(fFtTplus-F)F
-xnoremap F <Plug>(fFtTplus-F)F
-onoremap F <Plug>(fFtTplus-F)F
-nnoremap t <Plug>(fFtTplus-t)t
-xnoremap t <Plug>(fFtTplus-t)t
-onoremap t <Plug>(fFtTplus-t)t
-nnoremap T <Plug>(fFtTplus-T)T
-xnoremap T <Plug>(fFtTplus-T)T
-onoremap T <Plug>(fFtTplus-T)T
-nnoremap <esc> <Plug>(fFtTplus-esc)<esc>
-xnoremap <esc> <Plug>(fFtTplus-esc)<esc>
-onoremap <esc> <Plug>(fFtTplus-esc)<esc>
+nnoremap f <Plug>(fFtT-f)f
+xnoremap f <Plug>(fFtT-f)f
+onoremap f <Plug>(fFtT-f)f
+nnoremap F <Plug>(fFtT-F)F
+xnoremap F <Plug>(fFtT-F)F
+onoremap F <Plug>(fFtT-F)F
+nnoremap t <Plug>(fFtT-t)t
+xnoremap t <Plug>(fFtT-t)t
+onoremap t <Plug>(fFtT-t)t
+nnoremap T <Plug>(fFtT-T)T
+xnoremap T <Plug>(fFtT-T)T
+onoremap T <Plug>(fFtT-T)T
+nnoremap <esc> <Plug>(fFtT-esc)<esc>
+xnoremap <esc> <Plug>(fFtT-esc)<esc>
+onoremap <esc> <Plug>(fFtT-esc)<esc>
