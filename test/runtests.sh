@@ -8,7 +8,7 @@ for test_file in highlight.vim yank.vim visual.vim; do
     vim -nEs -u DEFAULTS -i NONE -S <(cat <<EOF
         vim9script
         set shortmess=I
-        so ../plugin/fFtTplus.vim
+        so ../plugin/fFtT.vim
         so ./${test_file}
         qa!
     EOF
