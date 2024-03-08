@@ -58,3 +58,15 @@ packadd fFtT.vim
 ## Configuration
 
 The appearance of characters that are unreachable within one jump is determined by the highlight group `FfTtSubtle`, which is linked to the `Comment` group by default.
+
+## Other Plugins to Enhance Your Workflow
+
+1. [**devdocs.vim**](https://github.com/girishji/devdocs.vim) - browse documentation from [devdocs.io](https://devdocs.io).
+
+2. [**easyjump.vim**](https://github.com/girishji/easyjump.vim) - makes code navigation a breeze.
+
+3. [**scope.vim**](https://github.com/girishji/scope.vim) - fuzzy find anything.
+
+4. [**autosuggest.vim**](https://github.com/girishji/autosuggest.vim) - live autocompletion for Vim's command line.
+
+5. [**vimcomplete**](https://github.com/girishji/vimcomplete) - enhances autocompletion in Vim.
