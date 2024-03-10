@@ -4,7 +4,7 @@ Characters that are reachable with a single jump are highlighted, while others a
 
 This plugin does not alter Vim operators or commands. It solely focuses on highlighting relevant characters without making any changes to the default key mappings. The code consists of less than 100 lines, with explanatory comments.
 
-![](img/fFtT.jpeg)
+![](https://gist.githubusercontent.com/girishji/40e35cd669626212a9691140de4bd6e7/raw/6041405e45072a7fbc4e352cbd461e450a7af90e/fFtT-img.jpeg)
 
 ## Requirements
 
