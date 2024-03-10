@@ -1,6 +1,6 @@
 fFtT.txt*	Accurate left-right navigation in Vim
 
-Author: Girish Palya (girishji AT gmail DOT com)
+Author: Girish (girishji AT gmail DOT com)
 For Vim version 9.0 and above
 
 ==============================================================================
